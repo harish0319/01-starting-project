@@ -1,5 +1,10 @@
 .form {
     text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 0.5rem;
 }
 
 .form button {
@@ -8,13 +13,44 @@
     background-color: #8a2b06;
     border: 1px solid #8a2b06;
     color: white;
-    padding: 0.25rem 2rem;
+    padding: 0.5rem 2rem;
     border-radius: 20px;
     font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 .form button:hover,
 .form button:active {
     background-color: #641e03;
     border-color: #641e03;
+    transform: scale(1.05);
+}
+
+.form button:active {
+    transform: scale(0.95);
+}
+
+.form p {
+    color: #ca3e51;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+/* Add animation for the button */
+@keyframes buttonPop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.form button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(138, 43, 6, 0.4);
 }
